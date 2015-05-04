@@ -14,6 +14,8 @@
 		C51227EB1AF2DC8500C80B77 /* vocabularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227EA1AF2DC8500C80B77 /* vocabularioTests.m */; };
 		C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */; };
 		C51227F81AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */; };
+		C5F222EF1AF7B5C4000A4D24 /* ADDAddWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F222ED1AF7B5C4000A4D24 /* ADDAddWordViewController.m */; };
+		C5F222F01AF7B5C4000A4D24 /* ADDAddWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5F222EE1AF7B5C4000A4D24 /* ADDAddWordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		C51227F41AF2DD5200C80B77 /* ADDDictionarySelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDDictionarySelectorViewController.h; path = ViewControllers/ADDDictionarySelectorViewController.h; sourceTree = "<group>"; };
 		C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDDictionarySelectorViewController.m; path = ViewControllers/ADDDictionarySelectorViewController.m; sourceTree = "<group>"; };
 		C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ADDDictionarySelectorViewController.xib; path = ViewControllers/ADDDictionarySelectorViewController.xib; sourceTree = "<group>"; };
+		C5F222EC1AF7B5C4000A4D24 /* ADDAddWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDAddWordViewController.h; path = ViewControllers/ADDAddWordViewController.h; sourceTree = "<group>"; };
+		C5F222ED1AF7B5C4000A4D24 /* ADDAddWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDAddWordViewController.m; path = ViewControllers/ADDAddWordViewController.m; sourceTree = "<group>"; };
+		C5F222EE1AF7B5C4000A4D24 /* ADDAddWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ADDAddWordViewController.xib; path = ViewControllers/ADDAddWordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +125,30 @@
 		C51227F91AF2DD8C00C80B77 /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5F222EA1AF7B584000A4D24 /* DictionaryVC */,
+				C5F222EB1AF7B591000A4D24 /* AddWordVC */,
+			);
+			name = VIewControllers;
+			sourceTree = "<group>";
+		};
+		C5F222EA1AF7B584000A4D24 /* DictionaryVC */ = {
+			isa = PBXGroup;
+			children = (
 				C51227F41AF2DD5200C80B77 /* ADDDictionarySelectorViewController.h */,
 				C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */,
 				C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */,
 			);
-			name = VIewControllers;
+			name = DictionaryVC;
+			sourceTree = "<group>";
+		};
+		C5F222EB1AF7B591000A4D24 /* AddWordVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5F222EC1AF7B5C4000A4D24 /* ADDAddWordViewController.h */,
+				C5F222ED1AF7B5C4000A4D24 /* ADDAddWordViewController.m */,
+				C5F222EE1AF7B5C4000A4D24 /* ADDAddWordViewController.xib */,
+			);
+			name = AddWordVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +233,7 @@
 			files = (
 				C51227F81AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib in Resources */,
 				C51227DF1AF2DC8400C80B77 /* LaunchScreen.xib in Resources */,
+				C5F222F01AF7B5C4000A4D24 /* ADDAddWordViewController.xib in Resources */,
 				C51227DC1AF2DC8400C80B77 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +254,7 @@
 			files = (
 				C51227DA1AF2DC8400C80B77 /* AppDelegate.m in Sources */,
 				C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */,
+				C5F222EF1AF7B5C4000A4D24 /* ADDAddWordViewController.m in Sources */,
 				C51227D71AF2DC8400C80B77 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
