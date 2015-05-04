@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "ADDDictionarySelectorViewController.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +21,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    ADDDictionarySelectorViewController *dictionarySelectorVC = [[ADDDictionarySelectorViewController alloc]init];
+    dictionarySelectorVC.title = @"Dictionaries";
+    UINavigationController *dictSelectorNav = [[UINavigationController alloc] initWithRootViewController:dictionarySelectorVC];
+    
+    ADDDictionarySelectorViewController *relleno = [[ADDDictionarySelectorViewController alloc]init];
+    relleno.title = @"Relleno";
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    tabBarController.viewControllers = @[dictSelectorNav, relleno];
+    
+    self.window.rootViewController = tabBarController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
