@@ -14,6 +14,12 @@
 		C51227EB1AF2DC8500C80B77 /* vocabularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227EA1AF2DC8500C80B77 /* vocabularioTests.m */; };
 		C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */; };
 		C51227F81AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */; };
+		C5A23A3A1AF94A1300EAD012 /* AddWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A23A381AF94A1300EAD012 /* AddWordSelectorViewController.m */; };
+		C5A23A3B1AF94A1300EAD012 /* AddWordSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */; };
+		C5A23A3E1AF95AD100EAD012 /* ADDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A23A3D1AF95AD100EAD012 /* ADDUtils.m */; };
+		C5A23A401AF98BB800EAD012 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A23A3F1AF98BB800EAD012 /* CoreGraphics.framework */; };
+		C5A23A421AF98BD100EAD012 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A23A411AF98BD100EAD012 /* UIKit.framework */; };
+		C5A23A441AF98BDB00EAD012 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A23A431AF98BDB00EAD012 /* Foundation.framework */; };
 		C5F222EF1AF7B5C4000A4D24 /* ADDAddWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F222ED1AF7B5C4000A4D24 /* ADDAddWordViewController.m */; };
 		C5F222F01AF7B5C4000A4D24 /* ADDAddWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5F222EE1AF7B5C4000A4D24 /* ADDAddWordViewController.xib */; };
 /* End PBXBuildFile section */
@@ -42,6 +48,14 @@
 		C51227F41AF2DD5200C80B77 /* ADDDictionarySelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDDictionarySelectorViewController.h; path = ViewControllers/ADDDictionarySelectorViewController.h; sourceTree = "<group>"; };
 		C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDDictionarySelectorViewController.m; path = ViewControllers/ADDDictionarySelectorViewController.m; sourceTree = "<group>"; };
 		C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ADDDictionarySelectorViewController.xib; path = ViewControllers/ADDDictionarySelectorViewController.xib; sourceTree = "<group>"; };
+		C5A23A371AF94A1300EAD012 /* AddWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddWordSelectorViewController.h; path = ViewControllers/AddWordSelectorViewController.h; sourceTree = "<group>"; };
+		C5A23A381AF94A1300EAD012 /* AddWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddWordSelectorViewController.m; path = ViewControllers/AddWordSelectorViewController.m; sourceTree = "<group>"; };
+		C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddWordSelectorViewController.xib; path = ViewControllers/AddWordSelectorViewController.xib; sourceTree = "<group>"; };
+		C5A23A3C1AF95AD100EAD012 /* ADDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDUtils.h; path = Others/ADDUtils.h; sourceTree = "<group>"; };
+		C5A23A3D1AF95AD100EAD012 /* ADDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDUtils.m; path = Others/ADDUtils.m; sourceTree = "<group>"; };
+		C5A23A3F1AF98BB800EAD012 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C5A23A411AF98BD100EAD012 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C5A23A431AF98BDB00EAD012 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C5F222EC1AF7B5C4000A4D24 /* ADDAddWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDAddWordViewController.h; path = ViewControllers/ADDAddWordViewController.h; sourceTree = "<group>"; };
 		C5F222ED1AF7B5C4000A4D24 /* ADDAddWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDAddWordViewController.m; path = ViewControllers/ADDAddWordViewController.m; sourceTree = "<group>"; };
 		C5F222EE1AF7B5C4000A4D24 /* ADDAddWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ADDAddWordViewController.xib; path = ViewControllers/ADDAddWordViewController.xib; sourceTree = "<group>"; };
@@ -52,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A23A441AF98BDB00EAD012 /* Foundation.framework in Frameworks */,
+				C5A23A421AF98BD100EAD012 /* UIKit.framework in Frameworks */,
+				C5A23A401AF98BB800EAD012 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +85,9 @@
 		C51227C81AF2DC8400C80B77 = {
 			isa = PBXGroup;
 			children = (
+				C5A23A431AF98BDB00EAD012 /* Foundation.framework */,
+				C5A23A411AF98BD100EAD012 /* UIKit.framework */,
+				C5A23A3F1AF98BB800EAD012 /* CoreGraphics.framework */,
 				C51227D31AF2DC8400C80B77 /* vocabulario */,
 				C51227E71AF2DC8500C80B77 /* vocabularioTests */,
 				C51227D21AF2DC8400C80B77 /* Products */,
@@ -92,6 +112,8 @@
 				C51227DD1AF2DC8400C80B77 /* LaunchScreen.xib */,
 				C51227D41AF2DC8400C80B77 /* Supporting Files */,
 				C51227F91AF2DD8C00C80B77 /* VIewControllers */,
+				C5A23A3C1AF95AD100EAD012 /* ADDUtils.h */,
+				C5A23A3D1AF95AD100EAD012 /* ADDUtils.m */,
 			);
 			path = vocabulario;
 			sourceTree = "<group>";
@@ -126,9 +148,20 @@
 			isa = PBXGroup;
 			children = (
 				C5F222EA1AF7B584000A4D24 /* DictionaryVC */,
+				C5A23A361AF9497A00EAD012 /* AddWordSelector */,
 				C5F222EB1AF7B591000A4D24 /* AddWordVC */,
 			);
 			name = VIewControllers;
+			sourceTree = "<group>";
+		};
+		C5A23A361AF9497A00EAD012 /* AddWordSelector */ = {
+			isa = PBXGroup;
+			children = (
+				C5A23A371AF94A1300EAD012 /* AddWordSelectorViewController.h */,
+				C5A23A381AF94A1300EAD012 /* AddWordSelectorViewController.m */,
+				C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */,
+			);
+			name = AddWordSelector;
 			sourceTree = "<group>";
 		};
 		C5F222EA1AF7B584000A4D24 /* DictionaryVC */ = {
@@ -231,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A23A3B1AF94A1300EAD012 /* AddWordSelectorViewController.xib in Resources */,
 				C51227F81AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib in Resources */,
 				C51227DF1AF2DC8400C80B77 /* LaunchScreen.xib in Resources */,
 				C5F222F01AF7B5C4000A4D24 /* ADDAddWordViewController.xib in Resources */,
@@ -253,8 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51227DA1AF2DC8400C80B77 /* AppDelegate.m in Sources */,
+				C5A23A3E1AF95AD100EAD012 /* ADDUtils.m in Sources */,
 				C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */,
 				C5F222EF1AF7B5C4000A4D24 /* ADDAddWordViewController.m in Sources */,
+				C5A23A3A1AF94A1300EAD012 /* AddWordSelectorViewController.m in Sources */,
 				C51227D71AF2DC8400C80B77 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,9 +410,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vocabulario/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -385,9 +422,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vocabulario/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -24,9 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.title = @"New word";
-    
+    // Do any additional setup after loading the view from its nib.    
     self.cellsArray = @[self.wordOneCell, self.wordTwoCell, self.commentsCell];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAdding)];
@@ -95,7 +93,16 @@
 {
     switch(section)
     {
-        case 0: return 2;  // section 0 has 2 rows
+        case 0: {
+            NSInteger numCells;
+            
+            if (self.objectToAdd == ADDObjectToAddList) {
+                numCells = 1;
+            }else{
+                numCells = 2;
+            }
+            return numCells;  // section 0 has 2 rows
+        }
         case 1: return 1;
         default: return 0;
     };
@@ -120,6 +127,8 @@
     }
     return nil;
 }
+
+
 
 #pragma mark - Table View Delegate
 
@@ -156,6 +165,14 @@
     }else{
         return UITableViewAutomaticDimension;
     }
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForSwipeAccessoryButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return @"some";
+}
+-(void)tableView:(UITableView *)tableView swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 #pragma mark - TextView Delegate
