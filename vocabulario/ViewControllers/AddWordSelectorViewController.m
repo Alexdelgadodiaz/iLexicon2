@@ -33,6 +33,8 @@
 
     
     self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
     
     self.tableData = [@[@"One",@"Two",@"Three",@"Twenty-one"] mutableCopy];
     

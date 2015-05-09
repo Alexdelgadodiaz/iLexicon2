@@ -14,6 +14,8 @@
 		C51227EB1AF2DC8500C80B77 /* vocabularioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227EA1AF2DC8500C80B77 /* vocabularioTests.m */; };
 		C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */; };
 		C51227F81AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */; };
+		C5638E2A1AFE661A008D239A /* ADDWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5638E281AFE661A008D239A /* ADDWordTableViewCell.m */; };
+		C5638E2B1AFE661A008D239A /* ADDWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5638E291AFE661A008D239A /* ADDWordTableViewCell.xib */; };
 		C5A23A3A1AF94A1300EAD012 /* AddWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A23A381AF94A1300EAD012 /* AddWordSelectorViewController.m */; };
 		C5A23A3B1AF94A1300EAD012 /* AddWordSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */; };
 		C5A23A3E1AF95AD100EAD012 /* ADDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A23A3D1AF95AD100EAD012 /* ADDUtils.m */; };
@@ -48,6 +50,9 @@
 		C51227F41AF2DD5200C80B77 /* ADDDictionarySelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADDDictionarySelectorViewController.h; path = ViewControllers/ADDDictionarySelectorViewController.h; sourceTree = "<group>"; };
 		C51227F51AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADDDictionarySelectorViewController.m; path = ViewControllers/ADDDictionarySelectorViewController.m; sourceTree = "<group>"; };
 		C51227F61AF2DD5200C80B77 /* ADDDictionarySelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ADDDictionarySelectorViewController.xib; path = ViewControllers/ADDDictionarySelectorViewController.xib; sourceTree = "<group>"; };
+		C5638E271AFE661A008D239A /* ADDWordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADDWordTableViewCell.h; sourceTree = "<group>"; };
+		C5638E281AFE661A008D239A /* ADDWordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADDWordTableViewCell.m; sourceTree = "<group>"; };
+		C5638E291AFE661A008D239A /* ADDWordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADDWordTableViewCell.xib; sourceTree = "<group>"; };
 		C5A23A371AF94A1300EAD012 /* AddWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddWordSelectorViewController.h; path = ViewControllers/AddWordSelectorViewController.h; sourceTree = "<group>"; };
 		C5A23A381AF94A1300EAD012 /* AddWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddWordSelectorViewController.m; path = ViewControllers/AddWordSelectorViewController.m; sourceTree = "<group>"; };
 		C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddWordSelectorViewController.xib; path = ViewControllers/AddWordSelectorViewController.xib; sourceTree = "<group>"; };
@@ -147,11 +152,23 @@
 		C51227F91AF2DD8C00C80B77 /* VIewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5B780891AFE9FD30053B7EF /* HeaderViews */,
+				C5638E261AFE4D9A008D239A /* Cells */,
 				C5F222EA1AF7B584000A4D24 /* DictionaryVC */,
 				C5A23A361AF9497A00EAD012 /* AddWordSelector */,
 				C5F222EB1AF7B591000A4D24 /* AddWordVC */,
 			);
 			name = VIewControllers;
+			sourceTree = "<group>";
+		};
+		C5638E261AFE4D9A008D239A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5638E271AFE661A008D239A /* ADDWordTableViewCell.h */,
+				C5638E281AFE661A008D239A /* ADDWordTableViewCell.m */,
+				C5638E291AFE661A008D239A /* ADDWordTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C5A23A361AF9497A00EAD012 /* AddWordSelector */ = {
@@ -162,6 +179,14 @@
 				C5A23A391AF94A1300EAD012 /* AddWordSelectorViewController.xib */,
 			);
 			name = AddWordSelector;
+			sourceTree = "<group>";
+		};
+		C5B780891AFE9FD30053B7EF /* HeaderViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HeaderViews;
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		C5F222EA1AF7B584000A4D24 /* DictionaryVC */ = {
@@ -269,6 +294,7 @@
 				C51227DF1AF2DC8400C80B77 /* LaunchScreen.xib in Resources */,
 				C5F222F01AF7B5C4000A4D24 /* ADDAddWordViewController.xib in Resources */,
 				C51227DC1AF2DC8400C80B77 /* Images.xcassets in Resources */,
+				C5638E2B1AFE661A008D239A /* ADDWordTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +315,7 @@
 				C51227DA1AF2DC8400C80B77 /* AppDelegate.m in Sources */,
 				C5A23A3E1AF95AD100EAD012 /* ADDUtils.m in Sources */,
 				C51227F71AF2DD5200C80B77 /* ADDDictionarySelectorViewController.m in Sources */,
+				C5638E2A1AFE661A008D239A /* ADDWordTableViewCell.m in Sources */,
 				C5F222EF1AF7B5C4000A4D24 /* ADDAddWordViewController.m in Sources */,
 				C5A23A3A1AF94A1300EAD012 /* AddWordSelectorViewController.m in Sources */,
 				C51227D71AF2DC8400C80B77 /* main.m in Sources */,
@@ -410,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vocabulario/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -422,7 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vocabulario/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

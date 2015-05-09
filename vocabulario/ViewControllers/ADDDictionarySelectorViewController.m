@@ -9,6 +9,9 @@
 #import "ADDDictionarySelectorViewController.h"
 #import "ADDAddWordViewController.h"
 #import "AddWordSelectorViewController.h"
+#import "ADDWordTableViewCell.h"
+
+static NSString *wordCellIdentifier = @"WordCell";
 
 
 @interface ADDDictionarySelectorViewController ()
@@ -21,6 +24,8 @@ UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, strong) NSMutableArray *testForHight;
+
 @property (nonatomic, strong) UILongPressGestureRecognizer *pressGestureRecognizer;
 
 
@@ -31,6 +36,13 @@ UIGestureRecognizerDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    if ([self.title isEqualToString:@"Vocabulary"]) {
+        [self.tableView registerNib:[UINib nibWithNibName:@"ADDWordTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:wordCellIdentifier];
+    }
+    
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
+    
     UIBarButtonItem *searchNavButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchWord:)];
     UIBarButtonItem *addWord = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addSomething)];
     
@@ -46,7 +58,6 @@ UIGestureRecognizerDelegate>
     self.pressGestureRecognizer.numberOfTouchesRequired =1;
     
     [self.tableView addGestureRecognizer:self.pressGestureRecognizer];
-    
     
     self.tableData = [@[@"One",@"Two",@"Three",@"Twenty-one"] mutableCopy];
     
@@ -167,8 +178,16 @@ UIGestureRecognizerDelegate>
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-//    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    //    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -245,6 +264,38 @@ UIGestureRecognizerDelegate>
 
 #pragma mark - TableView Delegates
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if ([self.title isEqualToString:@"Vocabulary"]) {
+        return 36;
+    }else return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if ([self.title isEqualToString:@"Vocabulary"]) {
+
+        ADDWordTableViewCell *wordCell = (ADDWordTableViewCell *)[tableView dequeueReusableCellWithIdentifier:wordCellIdentifier];
+        wordCell.word1.text = @"ejemplo2";
+        wordCell.word1.editable = NO;
+        wordCell.word2.text = @"ejemplo1";
+        wordCell.word2.editable = NO;
+        wordCell.word1.selectable = NO;
+        wordCell.word2.selectable = NO;
+        
+        wordCell.backgroundColor = [UIColor redColor];
+        
+        return wordCell;
+    }
+    
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
@@ -257,26 +308,92 @@ UIGestureRecognizerDelegate>
     }
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // devolvemos el tamaño al mismo que el background que hemos puesto+
+    
+    if ([self.title isEqualToString:@"Vocabulary"])
+    {
+        ADDWordTableViewCell *wordCell = self.testForHight[indexPath.row];
+        return wordCell.word1.contentSize.height > wordCell.word2.contentSize.height ? wordCell.word1.contentSize.height : wordCell.word2.contentSize.height;
+    }else{
+        return 50;
+    }
+
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *normalCellIdentifier = @"NormalCell";
     
-    if (cell == nil)
+    if ([self.title isEqualToString:@"Vocabulary"])
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        cell.textLabel.text = [self.searchResult objectAtIndex:indexPath.row];
-    }
-    else
-    {
-        cell.textLabel.text = self.tableData[indexPath.row];
-    }
+        ADDWordTableViewCell *wordCell = (ADDWordTableViewCell *)[tableView dequeueReusableCellWithIdentifier:wordCellIdentifier];
+                
+        if (wordCell == nil) {
+            wordCell = [[ADDWordTableViewCell alloc]init];
+        }
         
-    return cell;
+        if (tableView == self.searchDisplayController.searchResultsTableView){
+           
+            wordCell.word1.text = [self.searchResult objectAtIndex:indexPath.row];
+            wordCell.word2.text = @"ejemplo dos";
+            
+            
+        }else{
+            
+            wordCell.word1.text = [NSString stringWithFormat:@"ejemplo %ld", indexPath.row];
+            wordCell.word1.editable = NO;
+            wordCell.word2.text = @"ejemplo1";
+            wordCell.word2.editable = NO;
+            
+        }
+        
+        if (indexPath.row % 2 ==0) {
+            
+            UIImageView *imagecell=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+            imagecell.image=[UIImage imageNamed:@"barraSearchVoca"];
+            wordCell.backgroundView=imagecell;
+        }else{
+            
+            UIImageView *imagecell=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+            imagecell.image=[UIImage imageNamed:@"barraSearchVoca2"];
+            wordCell.backgroundView=imagecell;
+        }
+        
+        if (self.testForHight == nil) {
+            self.testForHight = [NSMutableArray new];
+        }
+        
+        [self.testForHight addObject:wordCell];
+        
+        return wordCell;
+        
+
+    }else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:normalCellIdentifier];
+        
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:normalCellIdentifier];
+        }
+        
+        if (tableView == self.searchDisplayController.searchResultsTableView)
+        {
+            cell.textLabel.text = [self.searchResult objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            cell.textLabel.text = self.tableData[indexPath.row];
+        }
+        
+        return cell;
+
+    }
+    
+    return nil;
+
 }
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -285,7 +402,12 @@ UIGestureRecognizerDelegate>
         // maybe show an action sheet with more options
         ADDAddWordViewController *addWordVC = [[ADDAddWordViewController alloc]init];
         addWordVC.title = @"Dictionary info";
-        addWordVC.objectToAdd = ADDObjectToAddWord;
+        if ([self.title isEqualToString:@"List"]) {
+            addWordVC.objectToAdd =ADDObjectToAddList;
+        }else{
+            addWordVC.objectToAdd = ADDObjectToAddWord;
+
+        }
         UINavigationController *addWordNav = [[UINavigationController alloc] initWithRootViewController:addWordVC];
         
         [self presentViewController:addWordNav animated:YES completion:nil];
@@ -293,11 +415,6 @@ UIGestureRecognizerDelegate>
         [self.tableView setEditing:NO];
     }];
     moreAction.backgroundColor = [UIColor lightGrayColor];
-    
-//    UITableViewRowAction *blurAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Blur" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-//        [self.tableView setEditing:NO];
-//    }];
-//    blurAction.backgroundEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         [self.tableData removeObjectAtIndex:indexPath.row];
@@ -326,11 +443,22 @@ UIGestureRecognizerDelegate>
     return UITableViewCellEditingStyleDelete;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.objects removeObjectAtIndex:indexPath.row];
-//    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (![self.title isEqualToString:@"Vocabulary"]) {
+        ADDDictionarySelectorViewController *listSelectorVC = [[ADDDictionarySelectorViewController alloc]init];
+        if ([self.title isEqualToString:@"Dictionaries"]) {
+            listSelectorVC.title = @"List";
+        }else{
+            listSelectorVC.title = @"Vocabulary";
+        }
+        
+        [self.navigationController pushViewController:listSelectorVC animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
+    }
+
+}
 
 #pragma mark - Search methods
 

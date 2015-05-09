@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>AEFD5349-4CF9-45E0-BA53-3C2CFE3F9B9F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>vocabulario</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5C259097BBF912487395905088C4B575A4D29663</key>
 		<string>https://github.com/Alexdelgadodiaz/iLexicon2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>vocabulario.xcodeproj</string>
+	<string>vocabulario.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5C259097BBF912487395905088C4B575A4D29663</key>
